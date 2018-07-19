@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" 
+   default-init-method="customInit" default-destroy-method="customDestroy">
+   
+   <bean id = "helloWorld" class = "com.bridgeit.SpringDemo.HelloWorld" >
+      <property name = "message" value = "Hello World!.....first xml singleton instance"/>
+   </bean>
+   
+  <bean id = "helloWorld1" class = "com.bridgeit.SpringDemo.HelloWorld" scope="prototype">
+      <property name = "message1" value = "welcome World!.....first xml prototype instance"/>
+   </bean>
+<bean id="messageBeanPostProcessor"   class="com.bridgeit.SpringDemo.PostProcessor" />
+
+<bean id="lazyInit" class="com.bridgeit.LazyInitialization.LazyInit" lazy-init="true"></bean>
+<bean id="nolazyInit" class="com.bridgeit.LazyInitialization.NoLazyInit"></bean>
+</beans>
