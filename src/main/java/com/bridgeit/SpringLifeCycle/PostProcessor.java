@@ -1,4 +1,4 @@
-package com.bridgeit.SpringDemo;
+package com.bridgeit.SpringLifeCycle;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;

@@ -13,7 +13,7 @@ public class ConfigMessage {
 	
 	public void test()
 	{
-		System.out.println("testing.......configurations by annotaions");
+		System.out.println("testing.......configurations by annotaions...inside ConfigMessage");
 	}
 
 }

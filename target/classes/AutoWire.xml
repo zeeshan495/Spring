@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns = "http://www.springframework.org/schema/beans"
-   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-   <bean id="application" class="com.bridgeit.AutoWire.Application" autowire="constructor">
-   </bean>
-<!--    <bean id="applicationUser" class="com.bridgeit.AutoWire.ApplicationUser">
-   <property name="name" value="zeeshan"/>
-   </bean> -->
-   <bean id="client" class="com.bridgeit.AutoWire.Client">
-   <property name="name" value="shaik"/>
-   </bean>
-   </beans>
+  
+	<bean id="application" class="com.bridgeit.AutoWire.Application"
+		autowire="byName">
+	</bean>
+
+	<!-- <bean id="application" class="com.bridgeit.AutoWire.Application" autowire="constructor"> 
+		</bean> -->
+	<bean id="client" class="com.bridgeit.AutoWire.Client">
+		<property name="name" value="zeeshan" />
+	</bean>
+
+</beans>

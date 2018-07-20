@@ -8,10 +8,11 @@ public class MainApp {
 	
 	public static void main(String[] args)
 	{
-		ApplicationContext context=new ClassPathXmlApplicationContext("Dependency.xml");
+		ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("Dependency.xml");
 		TextEditor te=(TextEditor)context.getBean("textEditor");
 		te.spellCheck();
-		((AbstractApplicationContext) context).close();
+		//((AbstractApplicationContext) context).close();
+		context.close();
 	}
 
 }

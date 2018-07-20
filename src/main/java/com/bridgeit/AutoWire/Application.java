@@ -4,21 +4,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class Application {
 	
+	
 	private Client client;
 
-	// **auto wire by constructor
-	public Application(Client client) {
-		this.client = client;
-	}
+	// ***auto wire by constructor
+//	public Application(Client client) {
+//		this.client = client;
+//	}
 	
-// **auto wire byName
+// ***auto wire byName
 //	public Client getClient() {
 //		return client;
 //	}
-//
-//	public void setClient(Client client) {
-//		this.client = client;
-//	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
 
 	@Override
 	public String toString() {

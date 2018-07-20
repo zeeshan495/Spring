@@ -12,7 +12,7 @@ public class AppByAnnotations {
 	object1.setMessage("configurations by annotations");
 	object1.getMessage();
 	object1.test();
-	System.out.println("first object "+object1);
+	System.out.println("first  object "+object1);
 	
 	ConfigMessage object2 = (ConfigMessage) context.getBean(ConfigMessage.class);
 	System.out.println("second object "+object2);
@@ -20,6 +20,7 @@ public class AppByAnnotations {
 	ConfigMessage2 object3=(ConfigMessage2)context.getBean(ConfigMessage2.class);
 	object3.setMessage("");
 	object3.getMessage();
+	System.out.println("third object "+object3);
 	((AbstractApplicationContext) context).registerShutdownHook();
 	}
 }

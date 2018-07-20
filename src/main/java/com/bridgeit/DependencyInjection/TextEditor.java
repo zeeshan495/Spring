@@ -1,25 +1,20 @@
 package com.bridgeit.DependencyInjection;
 
 public class TextEditor {
-	private SpellChecker spellChecker;
+	private SpellChecker spellCheckerDependencyRef;
 
-
-	public SpellChecker getSpellChecker() {
-		return spellChecker;
-	}
-
-	public void setSpellChecker(SpellChecker spellChecker) {
+	public void setSpellCheckerDependencyRef(SpellChecker spellChecker) {
 		System.out.println("setting spell check");
-		this.spellChecker = spellChecker;
+		this.spellCheckerDependencyRef = spellChecker;
 	}
 
 //	public TextEditor(SpellChecker spellChecker) {
-//		System.out.println("inside textEditor constructor");
-//		this.spellChecker = spellChecker;
+//		System.out.println("inside textEditor constructor....getting obj ref by constructor DI");
+//		this.spellCheckerDependencyRef = spellChecker;
 //	}
 
 	public void spellCheck() {
-		spellChecker.spellChecking();
+		spellCheckerDependencyRef.spellChecking();
 	}
 
 }

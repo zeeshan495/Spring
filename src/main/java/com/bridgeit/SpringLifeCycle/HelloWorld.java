@@ -1,4 +1,4 @@
-package com.bridgeit.SpringDemo;
+package com.bridgeit.SpringLifeCycle;
 
 import java.util.Arrays;
 import org.springframework.beans.BeansException;
@@ -13,12 +13,10 @@ import org.springframework.context.ApplicationContextAware;
 public class HelloWorld
 		implements InitializingBean, DisposableBean, ApplicationContextAware, BeanNameAware, BeanFactoryAware {
 	private String message, message1;
-	
-	
 
 	public HelloWorld() {
 		super();
-		System.out.println("Helloworld class called...................");
+		System.out.println("Helloworld class called............inside constructor");
 	}
 
 	public void setMessage(String message) {
@@ -47,22 +45,22 @@ public class HelloWorld
 	}
 
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("\nafterPropertiesSet() method of person bean is called !! ");
+		System.out.println("\nafterPropertiesSet() method of bean is called after all bean properties have been set");
 	}
 
 	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-		System.out.println("\nsetBeanFactory() is called !! ");
+		System.out.println("\nsetBeanFactory()...Which type of instance will be returned depends on the bean factory configuration");
 		System.out.println("setBeanFactory:: Aware bean singleton=" + beanFactory.isSingleton("helloWorld"));
 		System.out.println("setBeanFactory:: Aware bean singleton=" + beanFactory.isPrototype("helloWorld"));
 	}
 
 	public void setBeanName(String name) {
-		System.out.println("\nsetBeanName() is called !! \nbean name is : " + name);
+		System.out.println("\nsetBeanName()...it will set the name of the bean in the bean factory that created this bean. \nbean name is : " + name);
 		// System.out.println("bean name is defined as : "+name);
 	}
 
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-		System.out.println("\nsetApplicationContext() is called !! ");
+		System.out.println("\nsetApplicationContext()...this call will be used to initialize the object.");
 	//	System.out.println("setApplicationContext:: Bean Definition Names="
 	//			+ Arrays.toString(applicationContext.getBeanDefinitionNames()));
 	}

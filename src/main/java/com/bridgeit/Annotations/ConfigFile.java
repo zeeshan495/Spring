@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Scope;
 public class ConfigFile {
 
 	@Bean
-	@Scope("prototype")
+	@Scope("singleton")
 	public ConfigMessage configMessage()
 	{
 		return new ConfigMessage();
