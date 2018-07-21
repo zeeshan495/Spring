@@ -10,7 +10,7 @@ public class PostProcessor implements BeanPostProcessor{
 		{
 			HelloWorld helloworld=(HelloWorld)bean;
 			System.out.println("postProcess BeforeInitialization beanName : "+beanName);
-			System.out.println(" postProcessBeforeInitialization() value of message is  : "+helloworld.getMessage());
+			System.out.println(" postProcessBeforeInitialization() value of message is  : "+helloworld.getMessage1());
 		}
 		return bean;
 	}
@@ -20,8 +20,8 @@ public class PostProcessor implements BeanPostProcessor{
 		{
 			HelloWorld helloworld=(HelloWorld)bean;
 			System.out.println("\npostProcess AfterInitialization beanName : "+beanName);
-			System.out.println(" postProcessAfterInitialization() value of message is : "+helloworld.getMessage());
-			helloworld.setMessage("updated");
+			System.out.println(" postProcessAfterInitialization() value of message is : "+helloworld.getMessage1());
+			helloworld.setMessage1("updated");
 		}
 		return bean;
 	}

@@ -1,20 +1,27 @@
 package com.bridgeit.DependencyInjection;
 
-public class TextEditor {
-	private SpellChecker spellCheckerDependencyRef;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-	public void setSpellCheckerDependencyRef(SpellChecker spellChecker) {
-		System.out.println("setting spell check");
-		this.spellCheckerDependencyRef = spellChecker;
+
+public class TextEditor {
+	
+	public TextEditor() {
+		System.out.println("texteditor object created");
 	}
 
-//	public TextEditor(SpellChecker spellChecker) {
-//		System.out.println("inside textEditor constructor....getting obj ref by constructor DI");
+	private SpellChecker spellCheckerDependencyRef;
+
+//	public void setSpellCheckerDependencyRef(SpellChecker spellChecker) {
 //		this.spellCheckerDependencyRef = spellChecker;
 //	}
 
+	public TextEditor(SpellChecker spellChecker) {
+		this.spellCheckerDependencyRef = spellChecker;
+	}
+
 	public void spellCheck() {
-		spellCheckerDependencyRef.spellChecking();
+		spellCheckerDependencyRef.spellChecking(); 
 	}
 
 }

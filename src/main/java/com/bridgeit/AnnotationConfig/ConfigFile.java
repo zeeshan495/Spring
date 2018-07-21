@@ -1,4 +1,4 @@
-package com.bridgeit.Annotations;
+package com.bridgeit.AnnotationConfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,5 +13,6 @@ public class ConfigFile {
 	{
 		return new ConfigMessage();
 	}
+	
 
 }

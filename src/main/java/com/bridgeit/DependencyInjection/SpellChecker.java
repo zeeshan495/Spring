@@ -1,17 +1,19 @@
 package com.bridgeit.DependencyInjection;
 
+import org.springframework.stereotype.Component;
+
+
 public class SpellChecker {
 
-	public SpellChecker(int id,String name) {
+	public SpellChecker() {
 		super();
-		System.out.println("inside SpellChecker constructor");
-		System.out.println("myId = "+id+" myName = "+name);
+		System.out.println("SpellChecker object created");
 		
 	}
 	
 	public void spellChecking()
 	{
-		System.out.println("spell checking.........");
+		System.out.println("spell checking......Dependency Injection is working");
 	}
 
 }

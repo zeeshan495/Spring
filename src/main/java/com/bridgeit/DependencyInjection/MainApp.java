@@ -11,7 +11,6 @@ public class MainApp {
 		ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("Dependency.xml");
 		TextEditor te=(TextEditor)context.getBean("textEditor");
 		te.spellCheck();
-		//((AbstractApplicationContext) context).close();
 		context.close();
 	}
 

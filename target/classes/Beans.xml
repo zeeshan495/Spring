@@ -5,13 +5,13 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
 	default-init-method="customInit" default-destroy-method="customDestroy">
 
-	<bean id="helloWorld" class="com.bridgeit.SpringLifeCycle.HelloWorld">
-		<property name="message" value="Hello World!......singleton instance" />
+	<bean id="helloWorld1" class="com.bridgeit.SpringLifeCycle.HelloWorld">
+		<property name="message1" value="Hello World!......singleton instance" />
 	</bean>
 
-	<bean id="helloWorld1" class="com.bridgeit.SpringLifeCycle.HelloWorld"
+	<bean id="helloWorld2" class="com.bridgeit.SpringLifeCycle.HelloWorld"
 		scope="prototype">
-		<property name="message1" value="welcome World!.....prototype instance" />
+		<property name="message2" value="welcome World!.....prototype instance" />
 	</bean>
 	<!-- <bean id="messageBeanPostProcessor" class="com.bridgeit.SpringLifeCycle.PostProcessor" 
 		/> -->

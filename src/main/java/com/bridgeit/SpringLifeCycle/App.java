@@ -1,10 +1,5 @@
 package com.bridgeit.SpringLifeCycle;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -14,35 +9,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 	public static void main(String[] args) {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		System.out.println("\n***ApplicationContext is loaded***"
 				+ "\nCentral interface to provide configuration for an application."
 				+ "\nThis is read-only while the application is running and it provides bean factory methods");
-		// ApplicationContext context2=new
-		// ClassPathXmlApplicationContext("Beans2.xml");
-		HelloWorld obj1 = (HelloWorld) context.getBean("helloWorld");
-		// HelloWorld obj2=(HelloWorld) context.getBean("helloWorld1");
-		obj1.getMessage();
-		// obj2.getMessage1();
-		// System.out.println( "singleton object : "+obj1+"\nprototype object
-		// :"+obj2 +"\n");
 
-		// HelloWorld obj3=(HelloWorld) context.getBean("helloWorld");
-		// HelloWorld obj4=(HelloWorld) context.getBean("helloWorld1");
-		// obj3.getMessage();
-		// obj4.getMessage1();
-		// System.out.println( "singleton object : "+obj3+"\nprototype object
-		// :"+obj4 );
+		HelloWorld obj1 = (HelloWorld) context.getBean("helloWorld1");
+		// HelloWorld obj2=(HelloWorld) context.getBean("helloWorld2");
+		obj1.getMessage1();
+		// obj2.getMessage2();
+		context.close();
 
-		// HelloWorld obj5=(HelloWorld) context.getBean("helloWorld3");
-		// HelloWorld obj6=(HelloWorld) context.getBean("helloWorld4");
-		// obj5.getMessage();
-		// obj6.getMessage1();
-		// System.out.println("\nsecond context");
-		// System.out.println( "singleton object : "+obj5+"\nprototype object :
-		// "+obj6 +"\n");
-		// ((AbstractApplicationContext) context).close();
-		((AbstractApplicationContext) context).registerShutdownHook();
 	}
 
 }

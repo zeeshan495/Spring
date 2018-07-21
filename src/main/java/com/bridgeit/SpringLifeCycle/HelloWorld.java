@@ -12,28 +12,28 @@ import org.springframework.context.ApplicationContextAware;
 
 public class HelloWorld
 		implements InitializingBean, DisposableBean, ApplicationContextAware, BeanNameAware, BeanFactoryAware {
-	private String message, message1;
+	private String message1, message2;
 
 	public HelloWorld() {
 		super();
-		System.out.println("Helloworld class called............inside constructor");
+		System.out.println("Helloworld beanObject created");
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setMessage1(String message1) {
+		this.message1 = message1;
 	}
 
-	public void setMessage1(String message) {
-		this.message1 = message;
+	public void setMessage2(String message2) {
+		this.message2 = message2;
 	}
 
-	public String getMessage() {
-		System.out.println("\n getMessage() : " + message);
-		return message;
+	public String getMessage1() {
+		System.out.println("\n getMessage() : " + message1);
+		return message1;
 	}
 
-	public void getMessage1() {
-		System.out.println(" getMessage1() : " + message1);
+	public void getMessage2() {
+		System.out.println(" getMessage2() : " + message2);
 	}
 
 	public void init() {
@@ -50,8 +50,8 @@ public class HelloWorld
 
 	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
 		System.out.println("\nsetBeanFactory()...Which type of instance will be returned depends on the bean factory configuration");
-		System.out.println("setBeanFactory:: Aware bean singleton=" + beanFactory.isSingleton("helloWorld"));
-		System.out.println("setBeanFactory:: Aware bean singleton=" + beanFactory.isPrototype("helloWorld"));
+		System.out.println("setBeanFactory:: Aware bean singleton=" + beanFactory.isSingleton("helloWorld1"));
+		System.out.println("setBeanFactory:: Aware bean singleton=" + beanFactory.isPrototype("helloWorld1"));
 	}
 
 	public void setBeanName(String name) {
@@ -61,8 +61,6 @@ public class HelloWorld
 
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		System.out.println("\nsetApplicationContext()...this call will be used to initialize the object.");
-	//	System.out.println("setApplicationContext:: Bean Definition Names="
-	//			+ Arrays.toString(applicationContext.getBeanDefinitionNames()));
 	}
 
 	public void customDestroy() throws Exception {
@@ -74,7 +72,7 @@ public class HelloWorld
 	}
 	@Override
 	public String toString() {
-		return "HelloWorld [message=" + message + ", message1=" + message1 + "]";
+		return "HelloWorld [message1=" + message1 + ", message2=" + message2 + "]";
 	}
 
 }
